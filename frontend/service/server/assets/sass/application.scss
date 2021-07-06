@@ -1,0 +1,36 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: '../../public/images/';
+
+// Path where govuk-frontend looks for assets
+$govuk-assets-path: '/public/';
+
+@import 'node_modules/govuk-frontend/govuk/all';
+
+// Utilities
+@import 'utilities/variables';
+@import 'utilities/helpers';
+
+// Pages
+@import 'pages/cookies';
+@import 'pages/review';
+@import 'pages/accompanyingDocuments';
+@import 'pages/home';
+
+// Components
+@import 'components/buttons';
+@import 'components/back_link';
+@import 'components/breadcrumbs';
+@import 'components/tag';
+@import 'components/navigation';
+@import 'components/search_panel';
+@import 'components/table';
+@import 'components/paging';
+@import 'components/information_banner';
+@import 'components/notification_list';
+
+
+// Layout
+@import 'layout/footer';
+@import 'layout/dividers';
+@import 'layout/header';

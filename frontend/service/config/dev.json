@@ -1,0 +1,8 @@
+{
+  "connection": {
+    "scheme": "http",
+    "port": "8000",
+    "url": "localhost"
+  },
+  "isDev": true
+}

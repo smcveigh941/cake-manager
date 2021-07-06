@@ -1,0 +1,6 @@
+{
+  "connection": {
+    "port": "$$PORT"
+  },
+  "isDev": false
+}

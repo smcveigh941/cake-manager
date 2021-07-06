@@ -1,2 +1,13 @@
-/target
-/.idea
+**/.DS_Store
+**/.idea/
+**/*.iml
+**/*.log
+**/.classpath
+**/.project
+**/target/
+**/node_modules/
+**/*.map
+**/.nyc_output/
+**/public/
+**/report.xml
+**/.env

@@ -1,0 +1,32 @@
+{
+  "name": "cake-frontend",
+  "version": "0.0.1",
+  "description": "Frontend application for Cake",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "start": "node index.js",
+    "unit-test": "NODE_ENV=test nyc mocha --recursive",
+    "test": "npm run lint && npm run unit-test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test"
+    }
+  },
+  "author": "smcveigh941",
+  "dependencies": {
+    "@hapi/hapi": "20.0.0",
+    "@hapi/vision": "^6.1.0",
+    "blipp": "4.0.1",
+    "getconfig": "^4.5.0",
+    "handlebars": "^4.7.7",
+    "hapi-pino": "8.3.0",
+    "joi": "^17.4.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "standard": "14.3.4"
+  }
+}
