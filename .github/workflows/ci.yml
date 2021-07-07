@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Java 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11.0.4
+
+      - name: Compile Springboot
+        run: |
+          cd backend/service
+          mvn package -Dmaven.test.skip=true
+      - name: Unit tests - Springboot
+        run: |
+          cd backend/service
+          mvn test
+      - name: Compile Node
+        run: |
+          cd frontend/service
+          npm ci
+      - name: Unit tests - Node
+        run: |
+          cd frontend/service
+          npm test
+      - name: Deploy Springboot
+        run: |
+          cd backend/service
+          docker-compose -p cakemanagermicroservice up --build -d
+          sleep 20
+          docker logs cake-manager-microservice
+      - name: Deploy Node
+        run: |
+          cd frontend/service
+          docker-compose -p frontendcakemanager up --build -d
+          sleep 20
+          docker logs frontend-cake-manager

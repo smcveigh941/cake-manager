@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  cake-manager-microservice:
+    container_name: cake-manager-microservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
