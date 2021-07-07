@@ -21,17 +21,15 @@ import javax.validation.Valid;
 public class CakeResource {
 
   private final CakeService service;
-  private final CakeMapper cakeMapper;
 
-  public CakeResource(CakeService service, CakeMapper cakeMapper) {
+  public CakeResource(CakeService service) {
     this.service = service;
-    this.cakeMapper = cakeMapper;
   }
 
   @GetMapping
   public ResponseEntity<List<CakeResponseDto>> getCakes() {
     List<CakeResponseDto> cakes = service.getCakes().stream()
-        .map(cakeMapper::fromEntityToResponseDto)
+        .map(CakeMapper::fromEntityToResponseDto)
         .collect(Collectors.toList());
 
     return ResponseEntity.ok().body(cakes);
@@ -39,7 +37,7 @@ public class CakeResource {
 
   @PostMapping
   public ResponseEntity<String> postCake(@Valid @RequestBody CakeRequestDto cake) {
-    CakeEntity cakeEntity = cakeMapper.fromRequestDtoToEntity(cake);
+    CakeEntity cakeEntity = CakeMapper.fromRequestDtoToEntity(cake);
     service.writeCake(cakeEntity);
     return ResponseEntity.ok().build();
   }

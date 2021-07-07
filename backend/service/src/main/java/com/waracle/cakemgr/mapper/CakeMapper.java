@@ -4,18 +4,15 @@ import com.waracle.cakemgr.dao.entity.CakeEntity;
 import com.waracle.cakemgr.dto.request.CakeRequestDto;
 import com.waracle.cakemgr.dto.response.CakeResponseDto;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Component;
 
-@Component
 public class CakeMapper {
 
-  private final ModelMapper modelMapper;
+  private static final ModelMapper modelMapper = new ModelMapper();
 
-  public CakeMapper(ModelMapper modelMapper) {
-    this.modelMapper = modelMapper;
+  private CakeMapper() {
   }
 
-  public CakeResponseDto fromEntityToResponseDto(CakeEntity cakeEntity) {
+  public static CakeResponseDto fromEntityToResponseDto(CakeEntity cakeEntity) {
     modelMapper.typeMap(CakeEntity.class, CakeResponseDto.class)
         .addMapping(CakeEntity::getTitle, CakeResponseDto::setName)
         .addMapping(CakeEntity::getDesc, CakeResponseDto::setDescription)
@@ -24,7 +21,7 @@ public class CakeMapper {
     return modelMapper.map(cakeEntity, CakeResponseDto.class);
   }
 
-  public CakeEntity fromRequestDtoToEntity(CakeRequestDto cakeDto) {
+  public static CakeEntity fromRequestDtoToEntity(CakeRequestDto cakeDto) {
     modelMapper.typeMap(CakeRequestDto.class, CakeEntity.class)
         .addMapping(CakeRequestDto::getName, CakeEntity::setTitle)
         .addMapping(CakeRequestDto::getDescription, CakeEntity::setDesc)
