@@ -2,10 +2,18 @@
 <html lang="en">
 
 <head>
+  <title>CAKE</title>
+  <link href="{{assetPath}}/stylesheets/bootstrap.css" rel="stylesheet">
+  <link href="{{assetPath}}/stylesheets/font-awesome.css" rel="stylesheet">
+  <link href="{{assetPath}}/stylesheets/application.css" rel="stylesheet">
 </head>
 
 <body>
-{{content}}
+  {{> navbar}}
+  <div class="main">
+    {{{content}}}
+  </div>
+  <script src="{{assetPath}}/javascripts/bootstrap.js"></script>
 </body>
 
 </html>

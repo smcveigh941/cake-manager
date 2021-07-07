@@ -1,5 +1,6 @@
 const hapi = require('@hapi/hapi')
 const config = require('getconfig')
+const handlebars = require('./views/handlebars')
 
 async function createServer () {
   // Create the hapi server
@@ -15,11 +16,14 @@ async function createServer () {
   })
 
   // Register the plugins
+  await server.register(require('@hapi/inert'))
+  await server.register(require('blipp'))
   await server.register(require('./plugins/router'))
   await server.register(require('./plugins/log-errors'))
   await server.register(require('./plugins/logging'))
   await server.register(require('./plugins/vision'))
-  await server.register(require('blipp'))
+
+  handlebars.registerHelpers()
 
   return server
 }

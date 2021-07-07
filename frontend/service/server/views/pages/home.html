@@ -1,1 +1,14 @@
-<h1>test</h1>
+<div class="container px-0 mx-0 right-align">
+  <a href="/cakes" class="btn btn-lg btn-primary" role="button">Bake</a>
+</div>
+{{#each cakes as |cake|}}
+  <div class="container cake-panel">
+    <div class="image">
+      <img src="{{imageUrl}}" alt="image - {{description}}"/>
+    </div>
+    <div class="blurb">
+      <span>{{name}}</span>
+      <p>{{description}}</p>
+    </div>
+  </div>
+{{/each}}

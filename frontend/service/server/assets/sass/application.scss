@@ -1,36 +1,31 @@
-// Path to assets for use with the file-url function
-// in the govuk frontend toolkit's url-helpers partial
-$path: '../../public/images/';
+$purple: #5b10ff;
+$light-purple: #832eff;
+$light-grey: #cccccc;
 
-// Path where govuk-frontend looks for assets
-$govuk-assets-path: '/public/';
+html, body {
+  padding: 0;
+  margin: 0;
+  background: $light-grey;
+}
 
-@import 'node_modules/govuk-frontend/govuk/all';
+body {
+  padding: 20px;
+}
 
-// Utilities
-@import 'utilities/variables';
-@import 'utilities/helpers';
+.error {
+  color: red;
+  display: block;
+  border-width: 2px;
+  border-color: red;
+}
 
-// Pages
-@import 'pages/cookies';
-@import 'pages/review';
-@import 'pages/accompanyingDocuments';
-@import 'pages/home';
+.main {
+  width: calc(100% - 390px);
+  margin-left: 350px;
+  padding: 20px;
+}
 
-// Components
-@import 'components/buttons';
-@import 'components/back_link';
-@import 'components/breadcrumbs';
-@import 'components/tag';
-@import 'components/navigation';
-@import 'components/search_panel';
-@import 'components/table';
-@import 'components/paging';
-@import 'components/information_banner';
-@import 'components/notification_list';
-
-
-// Layout
-@import 'layout/footer';
-@import 'layout/dividers';
-@import 'layout/header';
+@import "components/sidenav";
+@import "components/buttons";
+@import "components/cake_panel";
+@import "layout/layout";

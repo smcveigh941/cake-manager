@@ -1,6 +1,9 @@
 {
   "connection": {
-    "port": "$$PORT"
+    "port": 3000
+  },
+  "service": {
+    "cake": "http://localhost:5000"
   },
   "isDev": false
 }

@@ -1,0 +1,24 @@
+.cake-panel {
+  margin: 20px 0;
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  border-radius: 10px;
+
+  .image {
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+
+  .blurb {
+    padding: 0 40px;
+
+    span {
+      font-size: 40px;
+    }
+  }
+}

@@ -7,26 +7,32 @@
     "lint": "standard",
     "start": "node index.js",
     "unit-test": "NODE_ENV=test nyc mocha --recursive",
-    "test": "npm run lint && npm run unit-test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test"
-    }
+    "test": "npm run lint && npm run unit-test",
+    "gulp": "node gulp.js"
   },
   "author": "smcveigh941",
   "dependencies": {
     "@hapi/hapi": "20.0.0",
+    "@hapi/inert": "^6.0.3",
     "@hapi/vision": "^6.1.0",
+    "@hapi/wreck": "^17.1.0",
     "blipp": "4.0.1",
+    "bootstrap": "^5.0.2",
+    "font-awesome": "^4.7.0",
     "getconfig": "^4.5.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
     "handlebars": "^4.7.7",
     "hapi-pino": "8.3.0",
-    "joi": "^17.4.0",
-    "path": "^0.12.7"
+    "joi": "13.1.2",
+    "path": "^0.12.7",
+    "sass": "^1.35.1"
   },
   "devDependencies": {
-    "husky": "^7.0.0",
     "standard": "14.3.4"
   }
 }
