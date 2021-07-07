@@ -1,18 +1,18 @@
 const path = require('path')
 
-const view_path = path.join(__dirname, '../views')
+const viewPath = path.join(__dirname, '../views')
 
 module.exports = {
   plugin: require('@hapi/vision'),
   options: {
     engines: { html: require('handlebars') },
-    relativeTo: view_path,
-    path: path.join(view_path, 'pages'),
-    layoutPath: path.join(view_path, ''),
+    relativeTo: viewPath,
+    path: path.join(viewPath, 'pages'),
+    layoutPath: path.join(viewPath, ''),
     layout: 'layout_template',
-    partialsPath: path.join(view_path, 'partials'),
+    partialsPath: path.join(viewPath, 'partials'),
     context: {
       assetPath: '/public'
-    },
+    }
   }
 }

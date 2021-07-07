@@ -1,4 +1,4 @@
-const cakeService = require('../../integration/cakeService')
+const cakeService = require('../../integration/cake_service')
 
 const handlers = () => {
   const GET = async (request, h) => {
@@ -7,7 +7,7 @@ const handlers = () => {
     return h
       .response(cakes)
       .header('Content-Type', 'application/json')
-      .header('Content-Disposition', `attachment; filename=cake.json`)
+      .header('Content-Disposition', 'attachment; filename=cake.json')
   }
 
   return {

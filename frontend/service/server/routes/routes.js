@@ -17,7 +17,7 @@ module.exports = [
       directory: {
         path: 'public/',
         listing: true
-      },
+      }
     }
   },
   {
@@ -39,5 +39,5 @@ module.exports = [
     method: GET,
     path: '/download',
     handler: downloadHandler.handlers().GET
-  },
+  }
 ]

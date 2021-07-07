@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  frontend-cake-manager:
+    container_name: frontend-cake-manager
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
