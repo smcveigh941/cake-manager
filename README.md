@@ -47,11 +47,46 @@ no need to create persistent storage.
 Submission
 ==========
 
-Please provide your version of this project as a git repository (e.g. Github, BitBucket, etc).
+This application is now made up of two microservices - a node.js frontend and a java springboot backend.
 
-Alternatively, you can submit the project as a zip or gzip. Use Google Drive or some other file sharing service to
-share it with us.
+###Backend
 
-Please also keep a log of the changes you make as a text file and provide this to us with your submission.
+```$bash
+cd backend/service
+mvn clean install
+mvn spring-boot:run
+```
 
-Good luck!
+This will spin up the backend at http://localhost:5000
+
+The backend provides the following endpoints
+```$xslt
+GET /cakes
+POST /cakes
+```
+
+###Frontend
+
+```$bash
+cd frontend/service
+npm ci
+npm run gulp
+npm start
+```
+
+This will start up the frontend at http://localhost:3000
+
+###Containerisation
+Each microservice has a Dockerfile which bundles the service into a deployable docker image
+
+###CI
+This project has a CI pipeline which will build, run unit tests, and deploy docker images of each microservice. The pipeline will run on each push.
+
+###Testing
+Both the frontend and backend have their own unit tests. Backend tests are written with JUnit and Mockito, and frontend tests are written with Mocha, Sinon and Chai.
+
+###Future Improvements
+Due to short time to complete this task, I was not able to do all of the things I would have liked to have done. These include:
+* Integration and Selenium testing
+* GitHub OAuth2 Integration
+* Deploy docker images to a cloud provider (AWS/Azure), at the moment the docker images are just deployed to the GitHub actions node's localhost
