@@ -49,7 +49,7 @@ Submission
 
 This application is now made up of two microservices - a node.js frontend and a java springboot backend.
 
-###Backend
+### Backend
 
 ```$bash
 cd backend/service
@@ -65,7 +65,7 @@ GET /cakes
 POST /cakes
 ```
 
-###Frontend
+### Frontend
 
 ```$bash
 cd frontend/service
@@ -76,16 +76,16 @@ npm start
 
 This will start up the frontend at http://localhost:3000
 
-###Containerisation
+### Containerisation
 Each microservice has a Dockerfile which bundles the service into a deployable docker image
 
-###CI
+### CI
 This project has a CI pipeline which will build, run unit tests, and deploy docker images of each microservice. The pipeline will run on each push.
 
-###Testing
+### Testing
 Both the frontend and backend have their own unit tests. Backend tests are written with JUnit and Mockito, and frontend tests are written with Mocha, Sinon and Chai.
 
-###Future Improvements
+### Future Improvements
 Due to short time to complete this task, I was not able to do all of the things I would have liked to have done. These include:
 * Integration and Selenium testing
 * GitHub OAuth2 Integration
